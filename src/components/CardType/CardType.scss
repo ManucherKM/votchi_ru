@@ -1,0 +1,39 @@
+@import '../../styles/var';
+
+$rounded: 0.5rem;
+
+.default_card_type {
+	padding: 8px 10px;
+	color: white;
+	cursor: default;
+
+	&:first-child {
+		border-top-left-radius: $rounded;
+		border-bottom-left-radius: $rounded;
+	}
+
+	&:last-child {
+		border-top-right-radius: $rounded;
+		border-bottom-right-radius: $rounded;
+	}
+
+	&.red {
+		background: $red;
+	}
+
+	&.orange {
+		background: $orange;
+	}
+
+	&.blue {
+		background: $blue;
+	}
+
+	&.green {
+		background: $green;
+	}
+
+	&.green_white {
+		background: $green_white;
+	}
+}
