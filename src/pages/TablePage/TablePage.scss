@@ -1,0 +1,49 @@
+.wrapper_table {
+	.container {
+		max-width: 1300px;
+		padding: 0 20px;
+		margin: 0 auto;
+	}
+
+	.panel_filter {
+		margin-top: 10px;
+		display: flex;
+		align-items: flex-end;
+		gap: 50px;
+	}
+
+	.info_cards {
+		margin-top: 20px;
+	}
+
+	.table_filters {
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+		gap: 15px;
+
+		.visible_rows {
+			display: flex;
+			gap: 8px;
+		}
+
+		.download_table {
+			display: flex;
+			gap: 8px;
+		}
+
+		.search {
+			margin-left: auto;
+		}
+	}
+
+	.main_table {
+		margin-top: 20px;
+	}
+
+	.search{
+		label{
+			
+		}
+	}
+}

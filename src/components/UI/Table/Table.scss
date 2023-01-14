@@ -1,0 +1,27 @@
+@import '../../../styles/var';
+
+$rounded: 0.3rem;
+
+.table {
+	.titles {
+		background: $dark;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		padding: 5px 10px;
+		border-top-left-radius: $rounded;
+		border-top-right-radius: $rounded;
+
+		li {
+			font-size: 14px;
+			color: $white;
+			font-weight: 500;
+		}
+	}
+
+	.children {
+		border-bottom: 1px solid $gray_white;
+		border-bottom-left-radius: $rounded;
+		border-bottom-right-radius: $rounded;
+	}
+}

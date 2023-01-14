@@ -1,14 +1,6 @@
 import { FC, useState } from 'react'
+import { IDropdown } from '../../types/types'
 import List from '../List/List'
-
-type textOption = string | number
-
-interface IDropdown {
-	options: textOption[]
-	selected: textOption | null | undefined
-	setSelected: (item: textOption) => void
-	defaultOption: textOption
-}
 
 const Dropdown: FC<IDropdown> = ({
 	options,
@@ -16,20 +8,37 @@ const Dropdown: FC<IDropdown> = ({
 	setSelected,
 	defaultOption,
 }) => {
-	const [isOpen, setIsOpen] = useState<boolean>(true)
+	const [isOpen, setIsOpen] = useState<boolean>(false)
+
+	function regulationMenu() {
+		setIsOpen(prev => !prev)
+	}
+
+	function updateSelected(newSelected: string) {
+		setIsOpen(false)
+		setSelected(newSelected)
+	}
+
+	const textSelected = selected ? selected : defaultOption
 
 	return (
 		<div className='custom_select'>
-			<span>{selected ? selected : defaultOption}</span>
+			<div onClick={regulationMenu} className='wrapper_selected'>
+				<p className='selected'>{textSelected}</p>
+			</div>
 			{isOpen && (
 				<div className='menu'>
-					<div className='option'>
+					<div onClick={() => updateSelected(defaultOption)} className='option'>
 						<span>{defaultOption}</span>
 					</div>
 					<List
 						arr={options}
 						render={item => (
-							<div className='option' key={item}>
+							<div
+								onClick={() => updateSelected(item)}
+								className='option'
+								key={item}
+							>
 								<span>{item}</span>
 							</div>
 						)}

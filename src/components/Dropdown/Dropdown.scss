@@ -2,12 +2,43 @@
 
 .custom_select {
 	outline: none;
+	position: relative;
+
+	.wrapper_selected {
+		border-bottom: 1px solid $gray;
+		width: fit-content;
+		padding-left: 5px;
+		padding-right: 8px;
+		cursor: pointer;
+
+		.selected {
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
 
 	.menu {
-		border: 1px solid red;
+		margin-top: 10px;
+		border: 1px solid $gray;
+		background: $white;
+		width: fit-content;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		position: absolute;
+		top: 25px;
+		left: 0;
+		z-index: 10;
+
 		.option {
+			padding: 5px 10px;
 			color: $dark;
-            cursor: pointer;
+			cursor: pointer;
+
+			&:hover {
+				background: $gray;
+			}
 		}
 	}
 }

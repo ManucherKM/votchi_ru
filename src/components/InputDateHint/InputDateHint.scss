@@ -1,0 +1,16 @@
+@import '../../styles/var';
+
+.label_date {
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+
+	span {
+		font-size: 13px;
+	}
+
+	.hint {
+		color: $gray;
+		margin-bottom: 3px;
+	}
+}
